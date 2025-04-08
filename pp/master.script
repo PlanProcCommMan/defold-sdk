@@ -183,7 +183,6 @@ local function handle(self, packet)
 		elseif k == "Event" and e ~= "" then
 			-- Send the event to the external script via a message
 			if self.event_script_url then
-				print("trying to call eventCallback", self.event_script_url)
 				msg.post(self.event_script_url, hash("event_callback"), { event = e })
 			else
 				print("Warning: event_script_url is not set.")
