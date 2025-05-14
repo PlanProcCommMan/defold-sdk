@@ -183,7 +183,7 @@ local function handle(self, packet)
 		elseif k == "Event" and e ~= "" then
 			-- Send the server-to-client event to the external script via a message
 			if self.server_to_client_url then
-				msg.post(self.server_to_client_url, hash("server_to_client"), { message = e })
+				msg.post(self.server_to_client_url, hash("pp_server_to_client"), { message = e })
 			else
 				print("Warning: server_to_client_url is not set.")
 			end
